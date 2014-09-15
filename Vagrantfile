@@ -11,8 +11,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   config.vm.network "private_network", ip: "192.168.33.10"
 
-  config.vm.synced_folder ".", "/home/vagrant/treeherder-service", type: "nfs"
-  config.vm.synced_folder "../treeherder-ui", "/home/vagrant/treeherder-ui", type: "nfs"
+  config.vm.synced_folder ".", "/home/vagrant/treeherder-service"
+  config.vm.synced_folder "../treeherder-ui", "/home/vagrant/treeherder-ui"
 
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--memory", "1024"]
